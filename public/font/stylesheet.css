@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'SVN-Aguda';
+    src: url('SVN-AgudaBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SVN-Bellico';
+    src: url('SVN-Bellico.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
