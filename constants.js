@@ -10,8 +10,8 @@ export const NAVBARTRAVEL = [
 ];
 
 export const NAVBARSTUDY = [
-  { name: "DU HỌC", link: "/", key: "design" },
+  { name: "DU HỌC", link: "/du-hoc", key: "design" },
   { name: "VIỆC LÀM", link: "#review-app", key: "construction" },
-  { name: "CẨM NANG HÀNG QUỐC", link: "/doi-tac", key: "partner" },
-  { name: "TIN TỨC", link: "/tin-tuc", key: "news" },
+  { name: "CẨM NANG HÀNG QUỐC", link: "#cam-nang-hanquoc", key: "partner" },
+  { name: "TIN TỨC", link: "#tin-tuc", key: "news" },
 ];

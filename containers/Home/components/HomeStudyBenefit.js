@@ -16,8 +16,8 @@ export default function HomeStudyBenefit() {
   const renderCardStudy = () => {
     return arrayCardTour.map((item, index) => {
       return (
-        <Grid item md={4}>
-          <CardStudy key={index} data={item} />
+        <Grid item md={4} key={index}>
+          <CardStudy data={item} />
         </Grid>
       );
     });

@@ -15,6 +15,7 @@ export default function ButtonHome(props) {
       }}
     >
       <Typography
+        variant="h3"
         sx={{
           color:
             props.color == "blue"
@@ -23,11 +24,11 @@ export default function ButtonHome(props) {
           marginRight: "13px",
           fontFamily: theme.fontName.aguda,
           fontWeight: 900,
-          fontSize: "2.5rem",
+          paddingBottom: "5px",
           letterSpacing: 4,
         }}
       >
-        DU HỌC
+        {props.name}
       </Typography>
       <PlayCircleIcon
         sx={{

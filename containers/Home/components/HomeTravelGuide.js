@@ -113,7 +113,6 @@ export default function HomeTravelGuide() {
           }}
         >
           <Slider
-            className="ádasdadasdasdasdasd"
             {...settings}
             style={{
               width: "80vw",

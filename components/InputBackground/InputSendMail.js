@@ -5,7 +5,6 @@ export default function InputSendMail({ placeholder }) {
   const theme = useTheme();
   return (
     <Input
-      className="asdadaddd"
       fullWidth
       width="20%"
       placeholder={placeholder}

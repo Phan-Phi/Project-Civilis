@@ -173,6 +173,8 @@ const Footer = () => {
         </Container>
       </Box>
     );
+  } else if (router.pathname == "/") {
+    return null;
   }
 };
 export default Footer;

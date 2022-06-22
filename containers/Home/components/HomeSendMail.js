@@ -15,10 +15,10 @@ import InputTextArea from "../../../components/InputBackground/InputTextArea";
 import { Image } from "../../../HOC";
 
 const arrayIconMXH = [
-  "/img/iconMXH-02.jpg",
-  "/img/iconMXH-03.jpg",
-  "/img/iconMXH-04.jpg",
-  "/img/iconMXH-05.jpg",
+  "/img/iconPNG/icon-02.png",
+  "/img/iconPNG/icon-03.png",
+  "/img/iconPNG/icon-04.png",
+  "/img/iconPNG/icon-05.png",
 ];
 
 export default function HomeSendMail() {
@@ -33,12 +33,7 @@ export default function HomeSendMail() {
       }}
     >
       <Container maxWidth="lg" sx={{ height: "100%" }}>
-        <Stack
-          direction="row"
-          spacing={5}
-          sx={{ height: "100%" }}
-          className="plplplplplpl"
-        >
+        <Stack direction="row" spacing={5} sx={{ height: "100%" }}>
           <Box sx={{ width: "50%", height: "100%", padding: "7rem" }}>
             <Grid container sx={{ height: "100%" }} spacing={5}>
               {arrayIconMXH.map((item, index) => {

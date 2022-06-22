@@ -4,7 +4,6 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Image } from "../../HOC";
 
 export default function CardStudy({ data }) {
-  console.log("data", data);
   const theme = useTheme();
   return (
     <Box sx={{ position: "relative" }}>

@@ -6,8 +6,10 @@ import { NAVBARTRAVEL, NAVBARSTUDY } from "../../constants";
 import Link from "../Link";
 import { Image } from "../../HOC";
 import { useRouter } from "next/router";
+import { useWindowScroll } from "react-use";
 
 export default function HeaderMenu() {
+  const { y } = useWindowScroll();
   const theme = useTheme();
   const router = useRouter();
   const renderHeaderStudyAbroad = () => {
@@ -33,7 +35,6 @@ export default function HeaderMenu() {
       );
     });
   };
-
   return (
     <Box
       sx={{
@@ -73,9 +74,11 @@ export default function HeaderMenu() {
       <Box
         sx={{
           width: "100vw",
-
+          boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           background:
-            "linear-gradient(90deg, rgba(185,234,94,0.6) 5%, rgba(92,198,102,0.6) 29%, rgba(0,240,233,0.6) 62%, rgba(0,152,255,0.6) 100%)",
+            y > 65
+              ? "linear-gradient(90deg, rgba(185,234,94,1) 5%, rgba(92,198,102,1) 29%, rgba(0,240,233,1) 62%, rgba(0,152,255,1) 100%)"
+              : "linear-gradient(90deg, rgba(185,234,94,0.6) 5%, rgba(92,198,102,0.6) 29%, rgba(0,240,233,0.6) 62%, rgba(0,152,255,0.6) 100%)",
         }}
       >
         <Container maxWidth="xl">

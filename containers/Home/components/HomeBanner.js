@@ -178,7 +178,9 @@ export default function HomeBanner() {
         }}
       >
         <Stack direction="row" spacing={0.5} sx={{ width: "100%" }}>
-          {renderStudyAbroad()}
+          {router.pathname == "/du-hoc"
+            ? renderStudyAbroad()
+            : renderTourTravel()}
         </Stack>
       </Container>
     </Box>

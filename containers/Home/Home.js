@@ -10,7 +10,8 @@ export default function Home() {
       sx={{
         height: "100vh",
         backgroundImage: "url('/img/BG-home.jpg')",
-        backgroundSize: "contain",
+        backgroundSize: "100vw 100vh",
+        backgroundRepeat: "no-repeat",
         position: "relative",
       }}
     >

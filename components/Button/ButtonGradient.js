@@ -55,9 +55,6 @@ export default function ButtonGradient(props) {
             position: "absolute",
             right: "-33px",
             transition: "all 0.5s",
-            "&:hover": {
-              background: "red !important",
-            },
           },
         }}
       >

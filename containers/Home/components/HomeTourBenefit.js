@@ -4,6 +4,7 @@ import React from "react";
 import { Image } from "../../../HOC";
 import StarIcon from "@mui/icons-material/Star";
 import Title from "../../../components/Title/Title";
+import ButtonGradient from "../../../components/Button/ButtonGradient";
 
 const arrayCardTour = ["Tour Bán Chạy", "Tour Khuyến Mãi", "Tour Đặc Biệt"];
 
@@ -120,7 +121,7 @@ export default function HomeTourBenefit() {
                       <StarIcon />
                       <StarIcon />
                     </Stack>
-                    <Button>TOUR FULL</Button>
+                    <ButtonGradient name="TOUR FULL" />
                   </Box>
                 </Box>
               </Grid>
