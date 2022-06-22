@@ -3,6 +3,7 @@ import { Container } from "@mui/system";
 import React from "react";
 import { Image } from "../../../HOC";
 import StarIcon from "@mui/icons-material/Star";
+import Title from "../../../components/Title/Title";
 
 const arrayCardTour = ["Tour Bán Chạy", "Tour Khuyến Mãi", "Tour Đặc Biệt"];
 
@@ -10,25 +11,7 @@ export default function HomeTourBenefit() {
   const theme = useTheme();
   return (
     <Box sx={{ paddingY: "2.5rem" }}>
-      <Box
-        sx={{
-          width: "45vw",
-          margin: "0 auto",
-          textAlign: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <Typography
-          variant="h2"
-          sx={{ fontFamily: theme.fontName.bellico, fontWeight: 400 }}
-        >
-          We have the best tour
-        </Typography>
-        <Typography variant="h6" sx={{ letterSpacing: "2px" }}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          sit unde vitae deleniti! sit unde vitae deleniti!
-        </Typography>
-      </Box>
+      <Title title="We have the best choice" />
 
       <Container maxWidth="lg">
         <Grid container columnSpacing={9}>

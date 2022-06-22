@@ -1,11 +1,8 @@
-import { HomePage } from "../containers";
-import { HOME_PAGE, PAGES, PARTNER, BLOG_DETAIL } from "../apis";
-
 import { transformUrl, prefetchData } from "../libs/";
-import { Box } from "@mui/material";
+import Home from "../containers/Home/Home";
 
-const Home = ({ ...props }) => {
-  return <Box>sdfsfs</Box>;
+const PageHome = ({ ...props }) => {
+  return <Home />;
 };
 
 export default Home;

@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 
 import { SettingConfig, GlobalConfig } from "../../context";
-import HeaderMenu from "../Headers/HeaderMenu";
 import Footer from "../Footer/Footer";
+import HeaderMenu from "../Headers/HeaderMenu";
 
 const Layout = ({ children }) => {
   return (

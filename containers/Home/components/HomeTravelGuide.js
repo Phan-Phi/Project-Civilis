@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Image } from "../../../HOC";
 import ArrowSlick from "../../../components/ArrowIcon/ArrowLeft";
+import { useRouter } from "next/router";
 
 const slickFeedBack = [
   "/img/feedback-02.jpg",
@@ -13,6 +14,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeTravelGuide() {
+  const router = useRouter();
   const theme = useTheme();
 
   const NextArrow = ({ onClick }) => {
@@ -98,7 +100,9 @@ export default function HomeTravelGuide() {
             marginBottom: "1.5rem",
           }}
         >
-          CẨM NANG DU LỊCH
+          {router.pathname == "/du-lich"
+            ? "CẨM NANG DU LỊCH"
+            : "CẨM NANG DU HỌC"}
         </Typography>
 
         <Box

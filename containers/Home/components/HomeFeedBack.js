@@ -3,6 +3,8 @@ import React from "react";
 import Slider from "react-slick";
 import { Image } from "../../../HOC";
 import ArrowSlick from "../../../components/ArrowIcon/ArrowLeft";
+import Title from "../../../components/Title/Title";
+import { useRouter } from "next/router";
 
 const slickFeedBack = [
   "/img/feedback-02.jpg",
@@ -13,6 +15,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeFeedBack() {
+  const router = useRouter();
   const theme = useTheme();
 
   const NextArrow = ({ onClick }) => {
@@ -61,25 +64,13 @@ export default function HomeFeedBack() {
 
   return (
     <Box paddingY={5}>
-      <Box
-        sx={{
-          width: "45vw",
-          margin: "0 auto",
-          textAlign: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <Typography
-          variant="h2"
-          sx={{ fontFamily: theme.fontName.bellico, fontWeight: 400 }}
-        >
-          Khách hàng nói gì về chúng tôi
-        </Typography>
-        <Typography variant="h6" sx={{ letterSpacing: "2px" }}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-          sit unde vitae deleniti!
-        </Typography>
-      </Box>
+      <Title
+        title={
+          router.pathname == "/du-hoc"
+            ? "Học viên của Civilis"
+            : "Khách hàng nói gì về chúng tôi"
+        }
+      />
 
       <Box
         sx={{

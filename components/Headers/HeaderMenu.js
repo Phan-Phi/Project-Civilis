@@ -1,17 +1,56 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
 import React, { Fragment } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 
-import { NAVBAR } from "../../constants";
+import { NAVBARTRAVEL, NAVBARSTUDY } from "../../constants";
 import Link from "../Link";
 import { Image } from "../../HOC";
 import { useRouter } from "next/router";
 
 export default function HeaderMenu() {
+  const theme = useTheme();
   const router = useRouter();
+  const renderHeaderStudyAbroad = () => {
+    return NAVBARSTUDY.map((item, index) => {
+      return (
+        <Link key={index} href={item.link} sx={{ textDecoration: "none" }}>
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {item.name}
+          </Typography>
+        </Link>
+      );
+    });
+  };
+
+  const renderHeaderTravel = () => {
+    return NAVBARTRAVEL.map((item, index) => {
+      return (
+        <Link key={index} href={item.link} sx={{ textDecoration: "none" }}>
+          <Typography variant="h5" sx={{ color: "white" }}>
+            {item.name}
+          </Typography>
+        </Link>
+      );
+    });
+  };
+
   return (
-    <Box sx={{ position: "fixed", zIndex: 5, top: "0" }}>
-      <Box sx={{ backgroundColor: "#0873b9", width: "100vw", height: "5vh" }}>
+    <Box
+      sx={{
+        position: "fixed",
+        zIndex: 5,
+        top: "0",
+        display: router.pathname == "/" ? "none" : "block",
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#0873b9",
+          width: "100vw",
+          height: "5vh",
+          display: router.pathname == "/du-hoc" ? "none" : "block",
+        }}
+      >
         <Container maxWidth="xl" sx={{ height: "100%" }}>
           <Stack
             direction="row"
@@ -41,6 +80,7 @@ export default function HeaderMenu() {
       >
         <Container maxWidth="xl">
           <Stack direction="row" justifyContent="space-between" paddingY={2}>
+            {/* icon and logo  */}
             <Stack direction="row" spacing={2}>
               <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
               <Box width="14rem">
@@ -54,20 +94,12 @@ export default function HeaderMenu() {
                 />
               </Box>
             </Stack>
+
+            {/* menu header  */}
             <Stack direction="row" spacing={3}>
-              {NAVBAR.map((item, index) => {
-                return (
-                  <Link
-                    key={index}
-                    href={item.link}
-                    sx={{ textDecoration: "none" }}
-                  >
-                    <Typography variant="h5" sx={{ color: "white" }}>
-                      {item.name}
-                    </Typography>
-                  </Link>
-                );
-              })}
+              {router.pathname == "/du-hoc"
+                ? renderHeaderStudyAbroad()
+                : renderHeaderTravel()}
             </Stack>
           </Stack>
         </Container>

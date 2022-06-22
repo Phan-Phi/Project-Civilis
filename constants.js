@@ -1,4 +1,4 @@
-export const NAVBAR = [
+export const NAVBARTRAVEL = [
   { name: "TOUR", link: "/tour", key: "tour" },
   { name: "TOUR DESIGN", link: "/tour-design", key: "tourDesign" },
   {
@@ -7,4 +7,11 @@ export const NAVBAR = [
     key: "camNangHanQuoc",
   },
   { name: "TIN TỨC", link: "#tin-tuc", key: "tinTuc" },
+];
+
+export const NAVBARSTUDY = [
+  { name: "DU HỌC", link: "/", key: "design" },
+  { name: "VIỆC LÀM", link: "#review-app", key: "construction" },
+  { name: "CẨM NANG HÀNG QUỐC", link: "/doi-tac", key: "partner" },
+  { name: "TIN TỨC", link: "/tin-tuc", key: "news" },
 ];
