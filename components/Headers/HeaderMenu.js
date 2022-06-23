@@ -59,7 +59,6 @@ export default function HeaderMenu() {
             alignItems="center"
             justifyContent="flex-end"
             spacing={4}
-            //   paddingY={1}
             sx={{ height: "100%" }}
           >
             <Typography variant="h6" sx={{ color: "white" }}>

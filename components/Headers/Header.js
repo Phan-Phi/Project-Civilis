@@ -1,6 +1,7 @@
 import { useWindowScroll, useToggle } from "react-use";
 import { useEffect, useState, Fragment, useMemo, useCallback } from "react";
 import HomeIcon from "@mui/icons-material/Home";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 
 import { useRouter } from "next/router";
 
@@ -45,9 +46,9 @@ const Header = ({}) => {
 
   const [isToggle, setIsToggle] = useToggle(false);
 
-  const { isMdUp } = useMedia();
+  const { isMdUp, isSmDown } = useMedia();
   const { y } = useWindowScroll();
-
+  console.log("yyyyy", y);
   const [animationState, setAnimationState] = useState(false);
 
   const renderHeaderStudyAbroad = () => {
@@ -74,26 +75,7 @@ const Header = ({}) => {
     });
   };
 
-  useEffect(() => {
-    // popupState.close();
-
-    if (y > 50 && !animationState) {
-      setAnimationState(true);
-    }
-
-    if (y < 50 && animationState) {
-      setAnimationState(false);
-    }
-  }, [y, animationState]);
-
-  useEffect(() => {
-    if (isMdUp) {
-      setIsToggle(false);
-    }
-  }, [isMdUp]);
-  console.log("yyyyy", y);
-
-  const Navbar = useMemo(() => {
+  const HeaderPC = () => {
     return (
       <Box
         sx={{
@@ -117,7 +99,6 @@ const Header = ({}) => {
               alignItems="center"
               justifyContent="flex-end"
               spacing={4}
-              //   paddingY={1}
               sx={{ height: "100%" }}
             >
               <Typography variant="h6" sx={{ color: "white" }}>
@@ -143,12 +124,12 @@ const Header = ({}) => {
           <Container maxWidth="xl">
             <Stack direction="row" justifyContent="space-between" paddingY={2}>
               {/* icon and logo  */}
-              <Stack direction="row" spacing={2}>
-                <Link href="/">
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <Link href="/" sx={{ height: "90%" }}>
                   <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
                 </Link>
 
-                <Box width="14rem">
+                <Box width="15rem" height="100%">
                   <Link
                     href={router.pathname == "/du-hoc" ? "/du-hoc" : "/du-lich"}
                   >
@@ -175,143 +156,182 @@ const Header = ({}) => {
         </Box>
       </Box>
     );
-  }, [NAVBAR, router]);
+  };
+
+  useEffect(() => {
+    // popupState.close();
+
+    if (y > 50 && !animationState) {
+      setAnimationState(true);
+    }
+
+    if (y < 50 && animationState) {
+      setAnimationState(false);
+    }
+  }, [y, animationState]);
+
+  useEffect(() => {
+    if (isMdUp) {
+      setIsToggle(false);
+    }
+  }, [isMdUp]);
 
   const NavbarMemo = useMemo(() => {
-    if (isMdUp) {
-      return <Fragment>{Navbar}</Fragment>;
-    } else {
-      //ở chế độ màn hình sẽ chuyển sang layout mobile
-      const TopNav = (
-        <Stack
-          sx={{ background: "white" }}
-          direction={"row"}
-          paddingTop={3}
-          paddingBottom={3}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box sx={{ width: "17%", height: "9vh" }}>
-            <Link href="/">
-              <Image
-                layout="fill"
-                src="/img/Logo-theHill.png"
-                width="100%"
-                height="100%"
-                // objectFit="contain"
-              />
+    //ở chế độ màn hình sẽ chuyển sang layout mobile
+    const TopNav = (
+      <Stack
+        direction={"row"}
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Box sx={{ width: "35%", height: "100%" }}>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <Link href="/" sx={{ height: "90%" }}>
+              <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
             </Link>
-          </Box>
-          <HamburgerIcon
-            onClick={() => {
-              setIsToggle(!isToggle);
-              //   popupState.close();
-            }}
-            className={isToggle && "open"}
-          />
-        </Stack>
-      );
 
-      return (
-        <Fragment>
-          <Container sx={{ zIndex: 10, position: "static", top: 0, left: 0 }}>
-            {TopNav}
-          </Container>
-
-          <Fade
-            in={animationState}
-            mountOnEnter
-            unmountOnExit
-            timeout={{
-              enter: 300,
-              exit: 150,
-            }}
-          >
-            <AppBar
+            <Box
+              width="15rem"
+              height="100%"
               sx={{
-                position: "fixed",
-                backgroundColor: theme.palette.common.white,
-                paddingX: "32px",
+                "& .MuiBox-root": {
+                  [theme.breakpoints.down("sm")]: {
+                    width: "43vw",
+                  },
+                },
               }}
             >
-              {TopNav}
-            </AppBar>
-          </Fade>
-
-          <ModalMenu open={isToggle} toggle={setIsToggle}>
-            <Container>
-              {TopNav}
-
-              <Box sx={{ marginTop: "8rem" }}>
-                {NAVBAR.map((el, index) => {
-                  return (
-                    <Link
-                      key={index}
-                      href={el.link}
-                      sx={{ textDecoration: "none", marginBottom: "2rem" }}
-                    >
-                      <Typography
-                        variant="button2"
-                        sx={{
-                          lineHeight: "2rem",
-                          color: theme.palette.common.natural2,
-                          display: "block",
-                          my: 2,
-                        }}
-                        onClick={() => {
-                          setIsToggle(false);
-                          // popupState.close();
-                        }}
-                      >
-                        {el.name}
-                        {/* {messages[`navbar.${el.key}`][0].value} */}
-                      </Typography>
-                    </Link>
-                  );
-                })}
-              </Box>
-
-              <Button sx={{ marginTop: "6rem" }}>
-                <Typography variant="button2">TRỞ THÀNH ĐỐI TÁC</Typography>
-              </Button>
-
-              <Stack
-                direction="row"
-                spacing={3}
-                sx={{ height: "5vh", marginTop: "2.5rem" }}
+              <Link
+                href={router.pathname == "/du-hoc" ? "/du-hoc" : "/du-lich"}
               >
                 <Image
-                  src="/img/image 3.png"
-                  width="100%"
-                  height="100%"
-                  objectFit="contain"
+                  {...{
+                    src: "/img/logo-png.png",
+                    width: "100%",
+                    height: "5vh",
+                    objectFit: "cover",
+                  }}
                 />
-                <Image
-                  src="/img/image 4 (1).png"
-                  width="100%"
-                  height="100%"
-                  objectFit="contain"
-                />
-              </Stack>
-            </Container>
-          </ModalMenu>
-        </Fragment>
-      );
-    }
-  }, [isMdUp, animationState, Navbar, isToggle]);
+              </Link>
+            </Box>
+          </Stack>
+        </Box>
+        <MenuRoundedIcon sx={{ color: "white" }} />
+        {/* <HamburgerIcon
+          // onClick={() => {
+          //   setIsToggle(!isToggle);
+          // }}
+          className={isToggle && "open"}
+        /> */}
+      </Stack>
+    );
+    return (
+      <Fragment>
+        <Container
+          sx={{
+            zIndex: 10,
+            position: "fixed",
+            top: 0,
+            left: 0,
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+            background:
+              y > 65
+                ? "linear-gradient(90deg, rgba(185,234,94,1) 5%, rgba(92,198,102,1) 29%, rgba(0,240,233,1) 62%, rgba(0,152,255,1) 100%)"
+                : "linear-gradient(90deg, rgba(185,234,94,0.6) 5%, rgba(92,198,102,0.6) 29%, rgba(0,240,233,0.6) 62%, rgba(0,152,255,0.6) 100%)",
+          }}
+        >
+          {TopNav}
+        </Container>
+
+        {/* <Fade
+          in={animationState}
+          mountOnEnter
+          unmountOnExit
+          timeout={{
+            enter: 300,
+            exit: 150,
+          }}
+        >
+          <AppBar
+            sx={{
+              position: "fixed",
+              backgroundColor: theme.palette.common.white,
+              paddingX: "32px",
+            }}
+          >
+            {TopNav}
+          </AppBar>
+        </Fade> */}
+
+        {/* <ModalMenu open={isToggle} toggle={setIsToggle}>
+          <Container>
+            {TopNav}
+
+            <Box sx={{ marginTop: "8rem" }}>
+              {NAVBAR.map((el, index) => {
+                return (
+                  <Link
+                    key={index}
+                    href={el.link}
+                    sx={{ textDecoration: "none", marginBottom: "2rem" }}
+                  >
+                    <Typography
+                      variant="button2"
+                      sx={{
+                        lineHeight: "2rem",
+                        color: theme.palette.common.natural2,
+                        display: "block",
+                        my: 2,
+                      }}
+                      onClick={() => {
+                        setIsToggle(false);
+                      }}
+                    >
+                      {el.name}
+                    </Typography>
+                  </Link>
+                );
+              })}
+            </Box>
+
+            <Button sx={{ marginTop: "6rem" }}>
+              <Typography variant="button2">TRỞ THÀNH ĐỐI TÁC</Typography>
+            </Button>
+
+            <Stack
+              direction="row"
+              spacing={3}
+              sx={{ height: "5vh", marginTop: "2.5rem" }}
+            >
+              <Image
+                src="/img/image 3.png"
+                width="100%"
+                height="100%"
+                objectFit="contain"
+              />
+              <Image
+                src="/img/image 4 (1).png"
+                width="100%"
+                height="100%"
+                objectFit="contain"
+              />
+            </Stack>
+          </Container>
+        </ModalMenu> */}
+      </Fragment>
+    );
+  }, [isMdUp, animationState, isToggle, y]);
 
   return (
     <Box
       sx={{
-        background: "white",
+        // background: "white",
         width: "100vw",
         boxShadow: " 0px 2px 20px 0 rgba(0, 0, 0, 0.3)",
         zIndex: 10,
       }}
     >
-      {/* {NavbarMemo} */}
-
-      {Navbar}
+      {isMdUp ? HeaderPC() : NavbarMemo}
     </Box>
   );
 };
