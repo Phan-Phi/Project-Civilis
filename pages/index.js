@@ -38,7 +38,7 @@ export default Home;
 //   } catch (e) {
 //     return {
 //       redirect: {
-//         destination: "/404",
+//         destination: "",
 //         permanent: false,
 //       },
 //     };

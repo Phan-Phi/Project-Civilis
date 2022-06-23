@@ -1,7 +1,6 @@
 import { Box, Button, Stack } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import { theme } from "tailwindcss/stubs/defaultConfig.stub";
 import ButtonGradient from "../Button/ButtonGradient";
 import InputBackground from "../InputBackground/InputBackground";
 
