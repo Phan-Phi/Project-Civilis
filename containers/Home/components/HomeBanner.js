@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import ButtonGradient from "../../../components/Button/ButtonGradient";
 import { Image } from "../../../HOC";
+import useMedia from "../../../hooks/useMedia";
 
 const arrayTour = [
   { title: "Tour", subTitle: "Trong Nước" },
@@ -34,6 +35,7 @@ const arrayStudyAbroad = [
 ];
 
 export default function HomeBanner() {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   const router = useRouter();
   const theme = useTheme();
 
@@ -45,18 +47,24 @@ export default function HomeBanner() {
           sx={{
             width: "33.3%",
             backgroundColor: "white",
-            padding: "15px",
+            padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
             "&:first-child": {
               borderRadius: "10rem 0 0 0",
+              [theme.breakpoints.down("sm")]: {
+                borderRadius: "4rem 0 0 0",
+              },
             },
             "&:last-child": {
               borderRadius: "0 10rem 0 0",
+              [theme.breakpoints.down("sm")]: {
+                borderRadius: "0 4rem 0 0",
+              },
             },
           }}
         >
           <Typography
-            variant="h3"
+            variant="h4"
             sx={{
               lineHeight: "inherit",
               fontWeight: 500,
@@ -67,12 +75,16 @@ export default function HomeBanner() {
             {item.title}
           </Typography>
           <Typography
-            variant="h5"
+            variant={isSmDown ? "hairline2" : "h5"}
             sx={{
               fontWeight: 700,
               lineHeight: "inherit",
               fontFamily: theme.fontName.aguda,
               color: theme.palette.primary.light,
+              [theme.breakpoints.down("sm")]: {
+                display: "block",
+                lineHeight: "inherit",
+              },
             }}
           >
             {item.subTitle}
@@ -144,10 +156,13 @@ export default function HomeBanner() {
     <Box sx={{ height: "100vh", position: "relative" }}>
       <Image
         {...{
-          src:
-            router.pathname == "/du-lich"
-              ? "/img/Banner-1920-x-1080.jpg"
-              : "/img/Banner-1920-x-1080.png",
+          src: isSmDown
+            ? router.pathname == "/du-lich"
+              ? "/img/P-banner-mobile.jpg"
+              : "/img/P-Banner-mobile-duhoc.png"
+            : router.pathname == "/du-lich"
+            ? "/img/Banner-1920-x-1080.jpg"
+            : "/img/Banner-1920-x-1080.png",
           width: "100%",
           height: "100%",
           objectFit: "cover",
@@ -175,9 +190,16 @@ export default function HomeBanner() {
           bottom: 0,
           left: "50%",
           transform: "translateX(-50%)",
+          [theme.breakpoints.down("sm")]: {
+            padding: 0,
+          },
         }}
       >
-        <Stack direction="row" spacing={0.5} sx={{ width: "100%" }}>
+        <Stack
+          direction="row"
+          spacing={isSmDown ? 0.2 : 0.5}
+          sx={{ width: "100%" }}
+        >
           {router.pathname == "/du-hoc"
             ? renderStudyAbroad()
             : renderTourTravel()}

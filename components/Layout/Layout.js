@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 
 import { SettingConfig, GlobalConfig } from "../../context";
 import Footer from "../Footer/Footer";
+import Header from "../Headers/Header";
 import HeaderMenu from "../Headers/HeaderMenu";
 
 const Layout = ({ children }) => {
@@ -21,7 +22,8 @@ const Layout = ({ children }) => {
     >
       <SettingConfig>
         <GlobalConfig>
-          <HeaderMenu />
+          <Header />
+          {/* <HeaderMenu /> */}
           <Box
             sx={{
               flexGrow: 1,

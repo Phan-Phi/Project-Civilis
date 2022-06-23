@@ -13,5 +13,5 @@ export { default as Loading } from "./Loading";
 export { default as Loading2 } from "./Loading2";
 export { default as ReaderHTML } from "./ReaderHTML";
 export { default as LoadingFail } from "./LoadingFail";
-export { default as ErrorFallback } from "./ErrorFallback";
+// export { default as ErrorFallback } from "./ErrorFallback";
 export { default as BlogItem } from "./Blog/BlogItem";

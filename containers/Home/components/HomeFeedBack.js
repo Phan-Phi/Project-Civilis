@@ -1,10 +1,11 @@
-import { Box, SvgIcon, Typography, useTheme } from "@mui/material";
+import { Box, SvgIcon, Container, useTheme } from "@mui/material";
 import React from "react";
 import Slider from "react-slick";
 import { Image } from "../../../HOC";
 import ArrowSlick from "../../../components/ArrowIcon/ArrowLeft";
 import Title from "../../../components/Title/Title";
 import { useRouter } from "next/router";
+import useMedia from "../../../hooks/useMedia";
 
 const slickFeedBack = [
   "/img/feedback-02.jpg",
@@ -15,6 +16,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeFeedBack() {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   const router = useRouter();
   const theme = useTheme();
 
@@ -56,14 +58,23 @@ export default function HomeFeedBack() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: isSmDown ? 1 : 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
 
   return (
-    <Box paddingY={5}>
+    <Container
+      maxWidth="lg"
+      paddingY={5}
+      sx={{
+        [theme.breakpoints.down("sm")]: {
+          paddingTop: "25px",
+          paddingBottom: "25px",
+        },
+      }}
+    >
       <Title
         title={
           router.pathname == "/du-hoc"
@@ -77,13 +88,18 @@ export default function HomeFeedBack() {
           "& .slick-list": {
             zIndex: 2,
           },
+          "& .slick-list": {
+            [theme.breakpoints.down("sm")]: {
+              width: "85%",
+              margin: "0 auto",
+            },
+          },
         }}
       >
         <Slider
-          className="ádasdadasdasdasdasd"
           {...settings}
           style={{
-            width: "80vw",
+            width: isSmDown ? "100%" : "80vw",
             margin: "0 auto",
             position: "relative",
           }}
@@ -104,6 +120,6 @@ export default function HomeFeedBack() {
           })}
         </Slider>
       </Box>
-    </Box>
+    </Container>
   );
 }

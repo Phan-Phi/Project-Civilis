@@ -35,6 +35,7 @@ export default function HeaderMenu() {
       );
     });
   };
+
   return (
     <Box
       sx={{
@@ -85,21 +86,28 @@ export default function HeaderMenu() {
           <Stack direction="row" justifyContent="space-between" paddingY={2}>
             {/* icon and logo  */}
             <Stack direction="row" spacing={2}>
-              <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
+              <Link href="/">
+                <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
+              </Link>
+
               <Box width="14rem">
-                <Image
-                  {...{
-                    src: "/img/logo-png.png",
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                />
+                <Link
+                  href={router.pathname == "/du-hoc" ? "/du-hoc" : "/du-lich"}
+                >
+                  <Image
+                    {...{
+                      src: "/img/logo-png.png",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Link>
               </Box>
             </Stack>
 
             {/* menu header  */}
-            <Stack direction="row" spacing={3}>
+            <Stack direction="row" alignItems="center" spacing={3}>
               {router.pathname == "/du-hoc"
                 ? renderHeaderStudyAbroad()
                 : renderHeaderTravel()}

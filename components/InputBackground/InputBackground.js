@@ -9,7 +9,7 @@ import React, { Fragment } from "react";
 export default function InputBackground(label, ...props) {
   const theme = useTheme();
   return (
-    <FormControl variant="standard" sx={{ position: "inherit" }}>
+    <FormControl fullWidth variant="standard" sx={{ position: "inherit" }}>
       <InputLabel
         shrink
         htmlFor="bootstrap-input"

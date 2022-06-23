@@ -40,9 +40,17 @@ export default function CardStudy({ data }) {
           {data.name}
         </Typography>
 
-        <Stack direction="row" spacing={0.5} sx={{ marginBottom: "1rem" }}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={0.5}
+          sx={{ color: "#606060" }}
+          marginBottom={2}
+        >
           <CalendarMonthIcon sx={{ marginBottom: "1rem" }} className="icon" />
-          <Typography>06-07-2020</Typography>
+          <Typography variant="caption2" sx={{ color: "#606060" }}>
+            06-07-2020
+          </Typography>
         </Stack>
 
         <Typography variant="body2" sx={{}}>

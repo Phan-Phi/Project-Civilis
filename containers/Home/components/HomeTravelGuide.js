@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { Image } from "../../../HOC";
 import ArrowSlick from "../../../components/ArrowIcon/ArrowLeft";
 import { useRouter } from "next/router";
+import useMedia from "../../../hooks/useMedia";
 
 const slickFeedBack = [
   "/img/feedback-02.jpg",
@@ -14,6 +15,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeTravelGuide() {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   const router = useRouter();
   const theme = useTheme();
 
@@ -55,7 +57,7 @@ export default function HomeTravelGuide() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: isSmDown ? 1 : 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -68,7 +70,7 @@ export default function HomeTravelGuide() {
         height: "90vh",
         backgroundImage: "url('/img/Banner-1920-x-1080.jpg')",
         backgroundSize: "cover",
-        padding: "3rem",
+        padding: isSmDown ? "3rem 0" : "3rem",
         position: "relative",
       }}
     >
@@ -82,8 +84,10 @@ export default function HomeTravelGuide() {
           zIndex: 0,
         }}
       ></Box>
+
       <Box
         sx={{
+          width: isSmDown ? "100%" : "80%",
           textAlign: "center",
           padding: "1rem",
           position: "absolute",
@@ -93,7 +97,7 @@ export default function HomeTravelGuide() {
         }}
       >
         <Typography
-          variant="h3"
+          variant={isSmDown ? "h4" : "h3"}
           sx={{
             textAlign: "center",
             letterSpacing: "10px",
@@ -110,12 +114,18 @@ export default function HomeTravelGuide() {
             "& .slick-list": {
               zIndex: 2,
             },
+            "& .slick-list": {
+              [theme.breakpoints.down("sm")]: {
+                width: "90%",
+                margin: "0 auto",
+              },
+            },
           }}
         >
           <Slider
             {...settings}
             style={{
-              width: "80vw",
+              width: isSmDown ? "100%" : "80vw",
               margin: "0 auto",
               position: "relative",
             }}
@@ -123,14 +133,6 @@ export default function HomeTravelGuide() {
             {slickFeedBack.map((item, index) => {
               return (
                 <Box sx={{ height: "60vh" }} key={index} paddingX={2}>
-                  {/* <Image
-                    {...{
-                      src: item,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  /> */}
                   <iframe
                     width="100%"
                     height="100%"

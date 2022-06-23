@@ -5,20 +5,44 @@ import { Image } from "../../../HOC";
 import StarIcon from "@mui/icons-material/Star";
 import Title from "../../../components/Title/Title";
 import ButtonGradient from "../../../components/Button/ButtonGradient";
+import useMedia from "../../../hooks/useMedia";
 
 const arrayCardTour = ["Tour Bán Chạy", "Tour Khuyến Mãi", "Tour Đặc Biệt"];
 
 export default function HomeTourBenefit() {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   const theme = useTheme();
+
   return (
     <Box sx={{ paddingY: "2.5rem" }}>
       <Title title="We have the best choice" />
 
-      <Container maxWidth="lg">
-        <Grid container columnSpacing={9}>
+      <Container maxWidth="lg" className="plplplplplpl">
+        <Grid
+          container
+          columnSpacing={isSmDown ? 0 : 9}
+          sx={{
+            width: "100%",
+            [theme.breakpoints.down("sm")]: {
+              width: "100%",
+              margin: 0,
+            },
+          }}
+        >
           {arrayCardTour.map((item, index) => {
             return (
-              <Grid item md={4} key={index} sx={{}}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                key={index}
+                sx={{
+                  [theme.breakpoints.down("sm")]: {
+                    width: "100%",
+                    marginBottom: "80px",
+                  },
+                }}
+              >
                 <Box
                   sx={{
                     backgroundColor: "#5cc666",
@@ -26,7 +50,7 @@ export default function HomeTourBenefit() {
                   }}
                 >
                   <Typography
-                    variant="h4"
+                    variant={isSmDown ? "h2" : "h4"}
                     sx={{
                       color: theme.palette.common.white,
                       textAlign: "center",
@@ -78,7 +102,7 @@ export default function HomeTourBenefit() {
                       width: "100%",
                       height: "100%",
                       textAlign: "center",
-                      padding: "55px",
+                      padding: isSmDown ? "55px 40px" : "55px",
                       color: theme.palette.common.white,
                       transition: "ease 0.6s",
                       "&:hover": {
@@ -87,7 +111,7 @@ export default function HomeTourBenefit() {
                     }}
                   >
                     <Typography
-                      variant="body1"
+                      variant={isSmDown ? "h4" : "body1"}
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 2,
@@ -105,6 +129,7 @@ export default function HomeTourBenefit() {
                       Tóm tắt Tour
                     </Typography>
                     <Typography
+                      variant={isSmDown ? "body1" : "body1"}
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 1,
