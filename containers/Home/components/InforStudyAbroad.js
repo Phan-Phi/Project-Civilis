@@ -63,7 +63,146 @@ export default function InforStudyAbroad() {
           THÔNG TIN DU HỌC
         </Typography>
         <Box>
-          <Grid container>{renderCard()}</Grid>
+          <Grid container>
+            {/* {renderCard()} */}
+
+            <Grid item md={3}>
+              <Box
+                sx={{
+                  padding: "10px",
+                  backgroundColor: theme.palette.common.white,
+                  transition: "ease 0.5s",
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.main,
+                  },
+                  "&:hover span": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography
+                  variant="body1_bold"
+                  sx={{
+                    fontFamily: theme.fontName.aguda,
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  LỘ TRÌNH{" "}
+                  <Typography
+                    variant="body1_bold"
+                    sx={{
+                      fontFamily: theme.fontName.aguda,
+                      color: theme.palette.primary.light,
+                    }}
+                  >
+                    DU HỌC
+                  </Typography>
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item md={3}>
+              <Box
+                sx={{
+                  padding: "10px",
+                  backgroundColor: theme.palette.common.white,
+                  transition: "ease 0.5s",
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.main,
+                  },
+                  "&:hover span": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography
+                  variant="body1_bold"
+                  sx={{
+                    fontFamily: theme.fontName.aguda,
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  LỘ TRÌNH{" "}
+                  <Typography
+                    variant="body1_bold"
+                    sx={{
+                      fontFamily: theme.fontName.aguda,
+                      color: theme.palette.primary.light,
+                    }}
+                  >
+                    DU HỌC
+                  </Typography>
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item md={3}>
+              <Box
+                sx={{
+                  padding: "10px",
+                  backgroundColor: theme.palette.common.white,
+                  transition: "ease 0.5s",
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.main,
+                  },
+                  "&:hover span": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography
+                  variant="body1_bold"
+                  sx={{
+                    fontFamily: theme.fontName.aguda,
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  LỘ TRÌNH{" "}
+                  <Typography
+                    variant="body1_bold"
+                    sx={{
+                      fontFamily: theme.fontName.aguda,
+                      color: theme.palette.primary.light,
+                    }}
+                  >
+                    DU HỌC
+                  </Typography>
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item md={3}>
+              <Box
+                sx={{
+                  padding: "10px",
+                  backgroundColor: theme.palette.common.white,
+                  transition: "ease 0.5s",
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.main,
+                  },
+                  "&:hover span": {
+                    color: "white",
+                  },
+                }}
+              >
+                <Typography
+                  variant="body1_bold"
+                  sx={{
+                    fontFamily: theme.fontName.aguda,
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  LỘ TRÌNH{" "}
+                  <Typography
+                    variant="body1_bold"
+                    sx={{
+                      fontFamily: theme.fontName.aguda,
+                      color: theme.palette.primary.light,
+                    }}
+                  >
+                    DU HỌC
+                  </Typography>
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
         </Box>
       </Container>
     </Box>
