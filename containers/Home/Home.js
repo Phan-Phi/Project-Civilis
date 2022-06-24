@@ -2,8 +2,10 @@ import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
 import ButtonHome from "../../components/Button/ButtonHome";
 import Link from "../../components/Link";
+import useMedia from "../../hooks/useMedia";
 
 export default function Home() {
+  const { isMdUp, isSmDown } = useMedia();
   const theme = useTheme();
   return (
     <Box

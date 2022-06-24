@@ -56,7 +56,11 @@ export default function FooterMobileStudy() {
             </Box>
           </Box>
 
-          <Stack direction="row" sx={{ marginTop: "1rem !important" }}>
+          <Stack
+            direction="row"
+            sx={{ marginTop: "1rem !important" }}
+            spacing={1.5}
+          >
             <Box sx={{ width: "50%" }}>
               <Box sx={{ marginBottom: "15px" }}>
                 <Content variant="caption1">
@@ -83,7 +87,7 @@ export default function FooterMobileStudy() {
               </Box>
             </Box>
 
-            <Box>
+            <Box sx={{ width: "50%" }}>
               <Box sx={{ marginBottom: "15px" }}>
                 <Content variant="caption1">VĂN PHÒNG ĐẠI DIỆN HÀ NỘI</Content>
                 <Content variant="caption1">56 Đào Duy Từ,Phường 9</Content>

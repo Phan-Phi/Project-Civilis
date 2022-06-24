@@ -179,11 +179,7 @@ const Header = ({}) => {
   const NavbarMemo = useMemo(() => {
     //ở chế độ màn hình sẽ chuyển sang layout mobile
     const TopNav = (
-      <Stack
-        direction={"row"}
-        justifyContent="space-between"
-        alignItems="center"
-      >
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Box sx={{ width: "35%", height: "100%" }}>
           <Stack direction="row" alignItems="center" spacing={1}>
             <Link href="/" sx={{ paddingTop: "5px", height: "90%" }}>
@@ -229,6 +225,7 @@ const Header = ({}) => {
       <Fragment>
         <Container
           sx={{
+            display: router.pathname == "/" ? "none" : "block",
             zIndex: 10,
             position: "fixed",
             top: 0,

@@ -1,8 +1,11 @@
 import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import useMedia from "../../hooks/useMedia";
 
 export default function ButtonHome(props) {
+  const { isMdUp, isSmDown } = useMedia();
+
   const theme = useTheme();
   return (
     <Button
@@ -15,7 +18,7 @@ export default function ButtonHome(props) {
       }}
     >
       <Typography
-        variant="h3"
+        variant={isSmDown ? "h4" : "h3"}
         sx={{
           color:
             props.color == "blue"
