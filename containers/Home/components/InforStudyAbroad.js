@@ -66,7 +66,7 @@ export default function InforStudyAbroad() {
           <Grid container>
             {/* {renderCard()} */}
 
-            <Grid item md={3}>
+            <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   padding: "10px",
@@ -100,7 +100,7 @@ export default function InforStudyAbroad() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item md={3}>
+            <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   padding: "10px",
@@ -134,7 +134,7 @@ export default function InforStudyAbroad() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item md={3}>
+            <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   padding: "10px",
@@ -168,7 +168,7 @@ export default function InforStudyAbroad() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item md={3}>
+            <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   padding: "10px",

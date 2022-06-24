@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import Link from "../Link";
 import useMedia from "../../hooks/useMedia";
 import FooterMobileTravel from "./FooterMobileTravel";
+import FooterMobileStudy from "./FooterMobileStudy";
 
 const arrayAdress = [
   {
@@ -157,43 +158,49 @@ const Footer = () => {
     );
   } else if (router.pathname == "/du-hoc") {
     return (
-      <Box
-        sx={{
-          backgroundColor: "#0873b9",
-          width: "100vw",
-          display: router.pathname == "/" ? "none" : "block",
-        }}
-        paddingY={4}
-      >
-        <Container maxWidth="lg">
-          <Stack direction="row" spacing={10}>
-            <Box sx={{ width: "50%" }}>
-              <Box sx={{ marginBottom: "10px" }}>
-                <Title variant="h4" sx={{ marginBottom: "10px" }}>
-                  CÔNG TY TNHH CIVILIS
-                </Title>
-                <Content variant="caption1">
-                  Đại diện pháp lý: NGUYỄN TIẾN ĐẠT
-                </Content>
-                <Content variant="caption1">
-                  Giấy phép kinh doanh số: 0314993126 (Cấp bởi Sở Kế Hoạch và
-                  Đầu Tư Tp.HCM)
-                </Content>
-                <Content variant="caption1">
-                  Giấy phép tư vấn du học số: 2270/GDĐT-TC (Cấp bởi Bộ Giáo Dục
-                  và Đào Tạo)
-                </Content>
-                <Content variant="caption1">Hotline: 0989 633 678</Content>
-                <Content variant="caption1">
-                  Email: info@toptentravel.com.vn
-                </Content>
-              </Box>
-            </Box>
+      <Fragment>
+        {isSmDown ? (
+          <FooterMobileStudy />
+        ) : (
+          <Box
+            sx={{
+              backgroundColor: "#0873b9",
+              width: "100vw",
+              display: router.pathname == "/" ? "none" : "block",
+            }}
+            paddingY={4}
+          >
+            <Container maxWidth="lg">
+              <Stack direction="row" spacing={10}>
+                <Box sx={{ width: "50%" }}>
+                  <Box sx={{ marginBottom: "10px" }}>
+                    <Title variant="h4" sx={{ marginBottom: "10px" }}>
+                      CÔNG TY TNHH CIVILIS
+                    </Title>
+                    <Content variant="caption1">
+                      Đại diện pháp lý: NGUYỄN TIẾN ĐẠT
+                    </Content>
+                    <Content variant="caption1">
+                      Giấy phép kinh doanh số: 0314993126 (Cấp bởi Sở Kế Hoạch
+                      và Đầu Tư Tp.HCM)
+                    </Content>
+                    <Content variant="caption1">
+                      Giấy phép tư vấn du học số: 2270/GDĐT-TC (Cấp bởi Bộ Giáo
+                      Dục và Đào Tạo)
+                    </Content>
+                    <Content variant="caption1">Hotline: 0989 633 678</Content>
+                    <Content variant="caption1">
+                      Email: info@toptentravel.com.vn
+                    </Content>
+                  </Box>
+                </Box>
 
-            <Box sx={{ width: "50%" }}>{renderAddress()}</Box>
-          </Stack>
-        </Container>
-      </Box>
+                <Box sx={{ width: "50%" }}>{renderAddress()}</Box>
+              </Stack>
+            </Container>
+          </Box>
+        )}
+      </Fragment>
     );
   } else if (router.pathname == "/") {
     return null;

@@ -15,7 +15,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeTravelGuide() {
-  const { isSmUp, isSmDown, isMdUp } = useMedia();
+  const { isSmUp, isSmDown, isMdUp, isMdDown } = useMedia();
   const router = useRouter();
   const theme = useTheme();
 
@@ -57,7 +57,7 @@ export default function HomeTravelGuide() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: isSmDown ? 1 : 3,
+    slidesToShow: isMdDown ? 1 : 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,

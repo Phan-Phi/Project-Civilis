@@ -75,6 +75,7 @@ export default function HomeSendMail() {
                   <Grid
                     item
                     md={6}
+                    sm={6}
                     xs={3}
                     key={index}
                     sx={{ width: "50%", height: isSmDown ? "100%" : "50%" }}
@@ -107,7 +108,6 @@ export default function HomeSendMail() {
               className="colorSendMail"
               sx={{
                 opacity: "0.7",
-
                 width: "100%",
                 height: "100%",
               }}

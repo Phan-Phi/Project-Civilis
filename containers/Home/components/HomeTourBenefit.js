@@ -10,14 +10,14 @@ import useMedia from "../../../hooks/useMedia";
 const arrayCardTour = ["Tour Bán Chạy", "Tour Khuyến Mãi", "Tour Đặc Biệt"];
 
 export default function HomeTourBenefit() {
-  const { isSmUp, isSmDown, isMdUp } = useMedia();
+  const { isSmUp, isSmDown, isMdUp, isMdDown } = useMedia();
   const theme = useTheme();
 
   return (
     <Box sx={{ paddingY: "2.5rem" }}>
       <Title title="We have the best choice" />
 
-      <Container maxWidth="lg" className="plplplplplpl">
+      <Container maxWidth="lg">
         <Grid
           container
           columnSpacing={isSmDown ? 0 : 9}
@@ -27,11 +27,15 @@ export default function HomeTourBenefit() {
               width: "100%",
               margin: 0,
             },
+            [theme.breakpoints.down("md")]: {
+              margin: "0",
+            },
           }}
         >
           {arrayCardTour.map((item, index) => {
             return (
               <Grid
+                className="adasdadada"
                 item
                 xs={12}
                 md={4}
@@ -40,6 +44,10 @@ export default function HomeTourBenefit() {
                   [theme.breakpoints.down("sm")]: {
                     width: "100%",
                     marginBottom: "80px",
+                  },
+                  [theme.breakpoints.down("md")]: {
+                    padding: "0 !important",
+                    marginBottom: "3rem",
                   },
                 }}
               >
@@ -69,6 +77,9 @@ export default function HomeTourBenefit() {
                     },
                     "&:hover .overley": {
                       opacity: 0.4,
+                    },
+                    [theme.breakpoints.down("md")]: {
+                      height: "70vh",
                     },
                   }}
                 >
@@ -115,6 +126,10 @@ export default function HomeTourBenefit() {
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 2,
+                        [theme.breakpoints.down("md")]: {
+                          fontSize: "3rem",
+                          marginBottom: "1rem",
+                        },
                       }}
                     >
                       KOREAN TOUR

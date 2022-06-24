@@ -16,7 +16,7 @@ const slickFeedBack = [
 ];
 
 export default function HomeFeedBack() {
-  const { isSmUp, isSmDown, isMdUp } = useMedia();
+  const { isSmUp, isSmDown, isMdUp, isMdDown } = useMedia();
   const router = useRouter();
   const theme = useTheme();
 
@@ -58,7 +58,7 @@ export default function HomeFeedBack() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: isSmDown ? 1 : 3,
+    slidesToShow: isMdDown ? (isSmDown ? 1 : 2) : 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -93,11 +93,16 @@ export default function HomeFeedBack() {
               width: "85%",
               margin: "0 auto",
             },
+            [theme.breakpoints.down("md")]: {
+              width: "85%",
+              margin: "0 auto",
+            },
           },
         }}
       >
         <Slider
           {...settings}
+          // isMdDown ? { ...settings } : { ...settings }
           style={{
             width: isSmDown ? "100%" : "80vw",
             margin: "0 auto",
@@ -106,7 +111,7 @@ export default function HomeFeedBack() {
         >
           {slickFeedBack.map((item, index) => {
             return (
-              <Box sx={{ height: "60vh" }} key={index}>
+              <Box sx={{ height: "60vh" }} key={index} className="asdadasdasd">
                 <Image
                   {...{
                     src: item,
