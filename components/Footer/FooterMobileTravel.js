@@ -22,11 +22,7 @@ export default function FooterMobileTravel() {
       }}
       paddingY={4}
     >
-      <Container
-        maxWidth="lg"
-        sx={{ paddingX: "30px !important" }}
-        className="asdasdadad"
-      >
+      <Container maxWidth="lg" sx={{ paddingX: "30px !important" }}>
         <Stack direction="column" spacing={10}>
           <Box>
             <Box sx={{ marginBottom: "10px" }}>

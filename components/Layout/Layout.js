@@ -23,7 +23,6 @@ const Layout = ({ children }) => {
       <SettingConfig>
         <GlobalConfig>
           <Header />
-          {/* <HeaderMenu /> */}
           <Box
             sx={{
               flexGrow: 1,

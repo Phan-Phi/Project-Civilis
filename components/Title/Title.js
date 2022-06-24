@@ -5,13 +5,13 @@ import React from "react";
 import useMedia from "../../hooks/useMedia";
 
 export default function Title({ title }) {
-  const { isSmUp, isSmDown, isMdUp } = useMedia();
+  const { isSmUp, isSmDown, isMdUp, isMmDown } = useMedia();
   const router = useRouter();
   const theme = useTheme();
   return (
     <Box
       sx={{
-        width: isSmDown ? "70vw" : "45vw",
+        width: isMmDown ? (isSmDown ? "70vw" : "80vw") : "70vw",
         margin: "0 auto",
         textAlign: "center",
         marginBottom: isSmDown ? "1rem" : "2rem",

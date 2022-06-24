@@ -35,7 +35,6 @@ export default function HomeTourBenefit() {
           {arrayCardTour.map((item, index) => {
             return (
               <Grid
-                className="adasdadada"
                 item
                 xs={12}
                 md={4}

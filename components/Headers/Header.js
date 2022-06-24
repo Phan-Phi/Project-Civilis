@@ -48,7 +48,6 @@ const Header = ({}) => {
 
   const { isMdUp, isSmDown } = useMedia();
   const { y } = useWindowScroll();
-  console.log("yyyyy", y);
   const [animationState, setAnimationState] = useState(false);
 
   const renderHeaderStudyAbroad = () => {

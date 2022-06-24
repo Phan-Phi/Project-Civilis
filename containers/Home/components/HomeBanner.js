@@ -49,7 +49,7 @@ export default function HomeBanner() {
             backgroundColor: "white",
             padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
-            "&:first-child": {
+            "&:first-of-type": {
               borderRadius: "5rem 0 0 0",
               [theme.breakpoints.down("sm")]: {
                 borderRadius: "4rem 0 0 0",
@@ -104,7 +104,7 @@ export default function HomeBanner() {
             backgroundColor: "white",
             padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
-            "&:first-child": {
+            "&:first-of-type": {
               borderRadius: "5rem 0 0 0",
               [theme.breakpoints.down("sm")]: {
                 textAlign: "right",
