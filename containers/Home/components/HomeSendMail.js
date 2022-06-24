@@ -13,6 +13,7 @@ import ButtonGradient from "../../../components/Button/ButtonGradient";
 import InputSendMail from "../../../components/InputBackground/InputSendMail";
 import InputTextArea from "../../../components/InputBackground/InputTextArea";
 import { Image } from "../../../HOC";
+import useMedia from "../../../hooks/useMedia";
 
 const arrayIconMXH = [
   "/img/iconPNG/icon-02.png",
@@ -22,7 +23,9 @@ const arrayIconMXH = [
 ];
 
 export default function HomeSendMail() {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -32,17 +35,49 @@ export default function HomeSendMail() {
         padding: "3rem",
       }}
     >
-      <Container maxWidth="lg" sx={{ height: "100%" }}>
-        <Stack direction="row" spacing={5} sx={{ height: "100%" }}>
-          <Box sx={{ width: "50%", height: "100%", padding: "7rem" }}>
-            <Grid container sx={{ height: "100%" }} spacing={5}>
+      <Container maxWidth="lg" sx={{ height: "100%", textAlign: "center" }}>
+        <Typography
+          variant={isSmDown ? "body1_bold" : "h3"}
+          sx={{
+            display: "none",
+            color: theme.palette.common.white,
+            textAlign: "center",
+            letterSpacing: "10px",
+            marginBottom: "1.5rem",
+            [theme.breakpoints.down("sm")]: {
+              letterSpacing: 4,
+              fontWeight: 900,
+              display: "block",
+            },
+          }}
+        >
+          SOCIAL MEDIA
+        </Typography>
+        <Stack
+          direction={isSmDown ? "column" : "row"}
+          spacing={5}
+          sx={{ height: isSmDown ? "95%" : "100%" }}
+        >
+          <Box
+            sx={{
+              width: isSmDown ? "100%" : "50%",
+              height: isSmDown ? "15%" : "100%",
+              padding: isSmDown ? 0 : "7rem",
+            }}
+          >
+            <Grid
+              container
+              sx={{ height: "100%" }}
+              columnSpacing={isSmDown ? 4 : 5}
+            >
               {arrayIconMXH.map((item, index) => {
                 return (
                   <Grid
                     item
                     md={6}
+                    xs={3}
                     key={index}
-                    sx={{ width: "50%", height: "50%" }}
+                    sx={{ width: "50%", height: isSmDown ? "100%" : "50%" }}
                   >
                     <Image
                       {...{
@@ -60,10 +95,12 @@ export default function HomeSendMail() {
 
           <Box
             sx={{
-              width: "50%",
+              width: isSmDown ? "100%" : "50%",
               textAlign: "center",
-              //   padding: "4rem 2.5rem",
               position: "relative",
+              [theme.breakpoints.down("sm")]: {
+                height: "85%",
+              },
             }}
           >
             <Box
@@ -78,7 +115,7 @@ export default function HomeSendMail() {
 
             <Box
               sx={{
-                padding: "3rem",
+                padding: isSmDown ? "4rem 2rem" : "3rem",
                 width: "100%",
                 zIndex: 2,
                 position: "absolute",
@@ -107,7 +144,10 @@ export default function HomeSendMail() {
               <InputTextArea placeholder="Viết gì đó" />
 
               <Divider />
-              <ButtonGradient name="GỬI ĐẾN CIVILIS" color="blue" />
+              <ButtonGradient
+                name="GỬI ĐẾN CIVILIS"
+                color={isSmDown ? "green" : "blue"}
+              />
             </Box>
           </Box>
         </Stack>
