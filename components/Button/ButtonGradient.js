@@ -4,13 +4,14 @@ import { Button, Typography, useTheme } from "@mui/material";
 import useMedia from "../../hooks/useMedia";
 
 export default function ButtonGradient(props) {
-  const { isSmUp, isSmDown, isMdUp } = useMedia();
+  const { isSmUp, isSmDown, isMdUp, isMdDown } = useMedia();
   const theme = useTheme();
   if (props.color) {
     return (
       <Button
         variant="contained"
         sx={{
+          width: isMdDown ? (isSmDown ? "68%" : "100%") : "70%",
           height: "2.6rem",
           backgroundColor:
             props.color == "green"
@@ -31,7 +32,7 @@ export default function ButtonGradient(props) {
             color: theme.palette.common.white,
             fontFamily: theme.fontName.aguda,
             fontWeight: 900,
-            fontSize: isSmDown ? "0.8rem " : "1.2rem",
+            fontSize: isMdDown ? (isSmDown ? "0.8rem " : "1rem") : "1.2rem",
           }}
         >
           {props.name}

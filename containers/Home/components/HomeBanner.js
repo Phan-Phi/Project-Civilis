@@ -50,13 +50,13 @@ export default function HomeBanner() {
             padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
             "&:first-child": {
-              borderRadius: "10rem 0 0 0",
+              borderRadius: "5rem 0 0 0",
               [theme.breakpoints.down("sm")]: {
                 borderRadius: "4rem 0 0 0",
               },
             },
             "&:last-child": {
-              borderRadius: "0 10rem 0 0",
+              borderRadius: "0 5rem 0 0",
               [theme.breakpoints.down("sm")]: {
                 borderRadius: "0 4rem 0 0",
               },
@@ -105,7 +105,7 @@ export default function HomeBanner() {
             padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
             "&:first-child": {
-              borderRadius: "10rem 0 0 0",
+              borderRadius: "5rem 0 0 0",
               [theme.breakpoints.down("sm")]: {
                 textAlign: "right",
                 "& .MuiBox-root p": {
@@ -117,7 +117,7 @@ export default function HomeBanner() {
               },
             },
             "&:last-child": {
-              borderRadius: "0 10rem 0 0",
+              borderRadius: "0 5rem 0 0",
               [theme.breakpoints.down("sm")]: {
                 textAlign: "left",
 

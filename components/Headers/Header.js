@@ -186,7 +186,7 @@ const Header = ({}) => {
       >
         <Box sx={{ width: "35%", height: "100%" }}>
           <Stack direction="row" alignItems="center" spacing={1}>
-            <Link href="/" sx={{ height: "90%" }}>
+            <Link href="/" sx={{ paddingTop: "5px", height: "90%" }}>
               <HomeIcon sx={{ fontSize: "2.2rem", color: "white" }} />
             </Link>
 

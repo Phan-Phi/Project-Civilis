@@ -14,7 +14,7 @@ export default function Title({ title }) {
         width: isSmDown ? "70vw" : "45vw",
         margin: "0 auto",
         textAlign: "center",
-        marginBottom: isSmDown ? 0 : "2rem",
+        marginBottom: isSmDown ? "1rem" : "2rem",
       }}
     >
       <Typography
