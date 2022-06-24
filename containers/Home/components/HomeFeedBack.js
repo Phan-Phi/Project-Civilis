@@ -32,7 +32,7 @@ export default function HomeFeedBack() {
           transform: "translateY(-50%) ",
         }}
       >
-        <ArrowSlick sx={{ fontSize: "4rem" }} />
+        <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
       </Box>
     );
   };
@@ -49,7 +49,7 @@ export default function HomeFeedBack() {
           transform: "translateY(-50%) rotate(180deg)",
         }}
       >
-        <ArrowSlick sx={{ fontSize: "4rem" }} />
+        <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
       </Box>
     );
   };
@@ -111,7 +111,7 @@ export default function HomeFeedBack() {
         >
           {slickFeedBack.map((item, index) => {
             return (
-              <Box sx={{ height: "60vh" }} key={index} className="asdadasdasd">
+              <Box sx={{ height: "65vh" }} key={index} className="asdadasdasd">
                 <Image
                   {...{
                     src: item,

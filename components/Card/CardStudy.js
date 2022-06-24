@@ -24,6 +24,10 @@ export default function CardStudy({ data }) {
         sx={{
           padding: "1.5rem",
           transition: "all 0.5s",
+          [theme.breakpoints.down("sm")]: {
+            backgroundColor: "#f7f7f7",
+          },
+
           "&:hover ": {
             backgroundColor: theme.palette.primary.main,
           },

@@ -31,7 +31,7 @@ export default function HomeTravelGuide() {
           transform: "translateY(-50%) ",
         }}
       >
-        <ArrowSlick sx={{ fontSize: "4rem" }} />
+        <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
       </Box>
     );
   };
@@ -48,7 +48,7 @@ export default function HomeTravelGuide() {
           transform: "translateY(-50%) rotate(180deg)",
         }}
       >
-        <ArrowSlick sx={{ fontSize: "4rem" }} />
+        <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
       </Box>
     );
   };
@@ -100,7 +100,7 @@ export default function HomeTravelGuide() {
           variant={isSmDown ? "h4" : "h3"}
           sx={{
             textAlign: "center",
-            letterSpacing: "10px",
+            letterSpacing: isSmDown ? "3px" : "10px",
             marginBottom: "1.5rem",
           }}
         >
@@ -116,7 +116,7 @@ export default function HomeTravelGuide() {
             },
             "& .slick-list": {
               [theme.breakpoints.down("sm")]: {
-                width: "90%",
+                width: "95%",
                 margin: "0 auto",
               },
             },
