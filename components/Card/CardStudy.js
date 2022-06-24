@@ -2,12 +2,14 @@ import { Box, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Image } from "../../HOC";
+import useMedia from "../../hooks/useMedia";
 
 export default function CardStudy({ data }) {
+  const { isSmUp, isSmDown, isMdUp, isMdDown } = useMedia();
   const theme = useTheme();
   return (
     <Box sx={{ position: "relative" }}>
-      <Box sx={{ height: "30vh" }}>
+      <Box sx={{ height: isMdDown ? "35vh" : "30vh" }}>
         <Image
           {...{
             src: "/img/imgimg.jpeg",

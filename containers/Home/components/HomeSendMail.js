@@ -29,7 +29,7 @@ export default function HomeSendMail() {
   return (
     <Box
       sx={{
-        height: "90vh",
+        height: isSmDown ? "100vh" : "90vh",
         backgroundImage: "url('/img/imgimg.jpeg')",
         backgroundSize: "cover",
         padding: "3rem",
@@ -115,7 +115,7 @@ export default function HomeSendMail() {
 
             <Box
               sx={{
-                padding: isSmDown ? "4rem 2rem" : "3rem",
+                padding: isSmDown ? "3rem 2rem" : "3rem",
                 width: "100%",
                 zIndex: 2,
                 position: "absolute",
@@ -123,10 +123,10 @@ export default function HomeSendMail() {
               }}
             >
               <Typography
-                variant="h4"
+                variant={isSmDown ? "body1" : "h4"}
                 sx={{
                   fontFamily: theme.fontName.aguda,
-                  marginBottom: "2rem",
+                  marginBottom: isSmDown ? "1rem" : "2rem",
                   textAlign: "left",
                 }}
               >
@@ -157,9 +157,11 @@ export default function HomeSendMail() {
 }
 
 const Divider = styled(MuiDivider)(({ theme }) => {
+  const { isSmUp, isSmDown, isMdUp } = useMedia();
   return {
-    marginBottom: 30,
-    marginTop: 30,
+    marginBottom: isSmDown ? 0 : 30,
+    marginTop: isSmDown ? 10 : 30,
     display: "block",
+    border: "0 solid red",
   };
 });

@@ -102,21 +102,46 @@ export default function HomeBanner() {
           sx={{
             width: "33.3%",
             backgroundColor: "white",
-            padding: "15px",
+            padding: isSmDown ? "8px" : "15px",
             textAlign: "center",
             "&:first-child": {
               borderRadius: "10rem 0 0 0",
+              [theme.breakpoints.down("sm")]: {
+                textAlign: "right",
+                "& .MuiBox-root p": {
+                  textAlign: "right",
+                },
+                "& .MuiBox-root h4": {
+                  textAlign: "right",
+                },
+              },
             },
             "&:last-child": {
               borderRadius: "0 10rem 0 0",
+              [theme.breakpoints.down("sm")]: {
+                textAlign: "left",
+
+                "& .MuiBox-root p": {
+                  textAlign: "left",
+                },
+                "& .MuiBox-root h4": {
+                  textAlign: "left",
+                },
+              },
             },
           }}
         >
-          <Box sx={{ width: "43%", margin: "0 auto" }}>
+          <Box
+            sx={{
+              width: isSmDown ? "100%" : "43%",
+              margin: "0 auto",
+              marginBottom: "0.5rem",
+            }}
+          >
             <Typography
-              variant="h5"
+              variant={isSmDown ? "body2" : "body1"}
               sx={{
-                textAlign: "left",
+                textAlign: isSmDown ? "center" : "left",
                 lineHeight: "inherit",
                 fontWeight: 500,
                 fontFamily: theme.fontName.bellico,
@@ -126,9 +151,9 @@ export default function HomeBanner() {
               {item.title}
             </Typography>
             <Typography
-              variant="h3"
+              variant={isSmDown ? "h4" : "h3"}
               sx={{
-                textAlign: "left",
+                textAlign: "center",
                 fontWeight: 900,
                 lineHeight: "inherit",
                 fontFamily: theme.fontName.aguda,
@@ -138,15 +163,17 @@ export default function HomeBanner() {
               {item.subTitle}
             </Typography>
           </Box>
-          <Typography
-            variant="caption2"
-            sx={{
-              // textAlign: "center",
-              lineHeight: "inherit",
-            }}
-          >
-            {item.text}
-          </Typography>
+          <Box>
+            <Typography
+              sx={{
+                // textAlign: "center",
+                lineHeight: "100%",
+                fontSize: isSmDown ? "8px" : "0.7rem",
+              }}
+            >
+              {item.text}
+            </Typography>
+          </Box>
         </Box>
       );
     });
