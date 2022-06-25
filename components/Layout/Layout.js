@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
           >
             {children}
           </Box>
-          {/* <Footer /> */}
+          <Footer />
         </GlobalConfig>
       </SettingConfig>
     </Box>

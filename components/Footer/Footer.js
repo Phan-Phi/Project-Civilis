@@ -202,7 +202,7 @@ const Footer = () => {
         )}
       </Fragment>
     );
-  } else if (router.pathname == "/") {
+  } else if (router.pathname == "/" || "/404") {
     return null;
   }
 };

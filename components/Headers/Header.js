@@ -81,7 +81,7 @@ const Header = ({}) => {
           position: "fixed",
           zIndex: 5,
           top: "0",
-          display: router.pathname == "/" ? "none" : "block",
+          display: router.pathname == "/" && "/404" ? "none" : "block",
         }}
       >
         <Box
