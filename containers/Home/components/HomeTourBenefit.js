@@ -112,7 +112,7 @@ export default function HomeTourBenefit() {
                       width: "100%",
                       height: "100%",
                       textAlign: "center",
-                      padding: isSmDown ? "55px 40px" : "55px",
+                      padding: isSmDown ? "55px 40px" : "40px",
                       color: theme.palette.common.white,
                       transition: "ease 0.6s",
                       "&:hover": {

@@ -31,7 +31,7 @@ export default function HomeSendMail() {
   return (
     <Box
       sx={{
-        height: isSmDown ? "90vh" : "90vh",
+        // height: isSmDown ? "90vh" : "90vh",
         backgroundImage: "url('/img/imgimg.jpeg')",
         backgroundSize: "cover",
         padding: "2rem",
