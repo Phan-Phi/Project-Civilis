@@ -1,5 +1,7 @@
-const Error = ({ error }) => {
-  return <div>Server lỗi rồi</div>;
+import { Box } from "@mui/material";
+
+const ErrorFallback = ({}) => {
+  return <Box>Server đang bị lỗi vui lòng thử lại sau</Box>;
 };
 
-export default Error;
+export default ErrorFallback;
