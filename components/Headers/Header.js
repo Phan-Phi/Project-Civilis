@@ -114,10 +114,7 @@ const Header = ({}) => {
           sx={{
             width: "100vw",
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-            background:
-              y > 65
-                ? "linear-gradient(90deg, rgba(185,234,94,1) 5%, rgba(92,198,102,1) 29%, rgba(0,240,233,1) 62%, rgba(0,152,255,1) 100%)"
-                : "linear-gradient(90deg, rgba(185,234,94,0.6) 5%, rgba(92,198,102,0.6) 29%, rgba(0,240,233,0.6) 62%, rgba(0,152,255,0.6) 100%)",
+            background: "red",
           }}
         >
           <Container maxWidth="xl">
