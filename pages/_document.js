@@ -57,7 +57,7 @@ class MyDocument extends Document {
           {process.env.NODE_ENV === "production" && (
             <meta
               http-equiv="Content-Security-Policy"
-              content="upgrade-insecure-requests"
+              content="upgrade-insecure-requests, initial-scale=1, maximum-scale=1"
             ></meta>
           )}
           {this.props.emotionStyleTags}
