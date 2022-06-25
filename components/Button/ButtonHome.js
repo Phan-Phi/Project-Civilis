@@ -14,7 +14,7 @@ export default function ButtonHome(props) {
         borderRadius: "10rem",
         backgroundColor: "white",
         boxShadow: "rgba(44, 114, 180, 0.8) 0px 5px 15px",
-        padding: "10px 40px",
+        padding: isSmDown ? "10px 35px" : "10px 40px",
       }}
     >
       <Typography
