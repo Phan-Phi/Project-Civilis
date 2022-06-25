@@ -121,7 +121,7 @@ export default function InforStudyAbroad() {
                     color: theme.palette.primary.main,
                   }}
                 >
-                  LỘ TRÌNH{" "}
+                  LỘ PHÍ{" "}
                   <Typography
                     variant="body1_bold"
                     sx={{
@@ -155,7 +155,7 @@ export default function InforStudyAbroad() {
                     color: theme.palette.primary.main,
                   }}
                 >
-                  LỘ TRÌNH{" "}
+                  BÍ KÍP{" "}
                   <Typography
                     variant="body1_bold"
                     sx={{
@@ -163,7 +163,7 @@ export default function InforStudyAbroad() {
                       color: theme.palette.primary.light,
                     }}
                   >
-                    DU HỌC
+                    CHỌN TRƯỜNG
                   </Typography>
                 </Typography>
               </Box>
@@ -189,7 +189,7 @@ export default function InforStudyAbroad() {
                     color: theme.palette.primary.main,
                   }}
                 >
-                  LỘ TRÌNH{" "}
+                  KHO{" "}
                   <Typography
                     variant="body1_bold"
                     sx={{
@@ -197,7 +197,7 @@ export default function InforStudyAbroad() {
                       color: theme.palette.primary.light,
                     }}
                   >
-                    DU HỌC
+                    HỌC BỔNG
                   </Typography>
                 </Typography>
               </Box>

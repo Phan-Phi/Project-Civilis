@@ -13,15 +13,25 @@ export default function InputSendMail({ placeholder }) {
       width="20%"
       placeholder={placeholder}
       sx={{
-        marginBottom: "1.2rem",
+        marginBottom: isSmDown ? "0.8rem" : "1.2rem",
 
         "& input": {
           fontFamily: theme.fontName.aguda,
-          fontSize: isSmDown ? "0.5rem" : "0.7rem",
+          fontSize: isSmDown ? "0.5rem !important" : "0.7rem !important",
           opacity: 1,
         },
+        "&:before": {
+          borderBottom:
+            router.pathname == "/du-hoc"
+              ? "1px solid white"
+              : "1px solid black",
+        },
         "& ::placeholder": {
-          color: "black",
+          color:
+            router.pathname == "/du-hoc"
+              ? "white !important"
+              : theme.palette.common.black,
+
           opacity: 1,
           [theme.breakpoints.down("sm")]: {
             color:

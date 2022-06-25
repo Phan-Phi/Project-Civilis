@@ -69,6 +69,8 @@ export default function HomeFeedBack() {
       maxWidth="lg"
       paddingY={5}
       sx={{
+        paddingTop: "25px",
+        paddingBottom: "40px",
         [theme.breakpoints.down("sm")]: {
           paddingTop: "25px",
           paddingBottom: "25px",

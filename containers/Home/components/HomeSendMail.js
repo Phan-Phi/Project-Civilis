@@ -130,6 +130,10 @@ export default function HomeSendMail() {
                   fontFamily: theme.fontName.aguda,
                   marginBottom: isSmDown ? "1rem" : "2rem",
                   textAlign: "left",
+                  color:
+                    router.pathname == "/du-hoc"
+                      ? theme.palette.common.white
+                      : theme.palette.common.black,
                   [theme.breakpoints.down("sm")]: {
                     color:
                       router.pathname == "/du-hoc"

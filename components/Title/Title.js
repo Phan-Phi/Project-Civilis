@@ -22,6 +22,8 @@ export default function Title({ title }) {
         sx={{
           fontFamily: theme.fontName.bellico,
           fontWeight: 400,
+          color:
+            router.pathname == "/du-hoc" ? theme.palette.primary.main : "black",
           [theme.breakpoints.down("sm")]: {
             color: theme.palette.primary.light,
           },

@@ -27,7 +27,7 @@ export default function HomeSearch() {
       >
         <Stack
           direction={isSmDown ? "column" : "row"}
-          spacing={isSmDown ? 3 : 8}
+          spacing={isSmDown ? 3 : 7}
           paddingY={4}
           alignItems="flex-end"
           sx={{

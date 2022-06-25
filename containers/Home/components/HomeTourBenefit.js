@@ -134,7 +134,7 @@ export default function HomeTourBenefit() {
                       KOREAN TOUR
                     </Typography>
                     <Typography
-                      variant="body1"
+                      variant="body2"
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 1,
@@ -143,7 +143,7 @@ export default function HomeTourBenefit() {
                       Tóm tắt Tour
                     </Typography>
                     <Typography
-                      variant={isSmDown ? "body1" : "body1"}
+                      variant={isSmDown ? "body1" : "body2"}
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 1,

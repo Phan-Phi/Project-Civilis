@@ -178,7 +178,7 @@ const Footer = () => {
                       CÔNG TY TNHH CIVILIS
                     </Title>
                     <Content variant="caption1">
-                      Đại diện pháp lý: NGUYỄN TIẾN ĐẠT
+                      Đại diện pháp lý: Trần Thiên Văn
                     </Content>
                     <Content variant="caption1">
                       Giấy phép kinh doanh số: 0314993126 (Cấp bởi Sở Kế Hoạch
