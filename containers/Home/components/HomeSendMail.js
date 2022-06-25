@@ -106,22 +106,24 @@ export default function HomeSendMail() {
               },
             }}
           >
-            <Box
+            {/* <Box
               className="colorSendMail"
               sx={{
                 opacity: "0.7",
                 width: "100%",
                 height: "100%",
               }}
-            ></Box>
+            ></Box> */}
 
             <Box
+              className="colorSendMail"
               sx={{
                 padding: isSmDown ? "3rem 2rem" : "3rem",
                 width: "100%",
+                // opacity: "0.7",
                 zIndex: 2,
-                position: "absolute",
-                top: 0,
+                // position: "absolute",
+                // top: 0,
               }}
             >
               <Typography

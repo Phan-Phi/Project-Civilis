@@ -10,6 +10,7 @@ export default function InputTextArea({ placeholder }) {
   const theme = useTheme();
   return (
     <Input
+      className="ádasdadadsdasdasdasdasd"
       fullWidth
       placeholder={placeholder}
       id="standard-multiline-static"
@@ -19,10 +20,16 @@ export default function InputTextArea({ placeholder }) {
       variant="standard"
       sx={{
         marginBottom: "1.2rem",
-        "& textarea": {
+        // "& :hover:before": {
+        //   borderBottom: "1px solid red",
+        // },
+        "& textarea ": {
           fontFamily: theme.fontName.aguda,
           fontSize: isSmDown ? "0.5rem" : "0.7rem",
           opacity: 1,
+        },
+        "& textarea:hover:before ": {
+          borderBottom: "1px solid red",
         },
         "&:before": {
           borderBottom:
