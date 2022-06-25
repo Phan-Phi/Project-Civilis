@@ -34,7 +34,7 @@ export default function HomeSendMail() {
         height: isSmDown ? "100vh" : "90vh",
         backgroundImage: "url('/img/imgimg.jpeg')",
         backgroundSize: "cover",
-        padding: "3rem",
+        padding: "2rem",
       }}
     >
       <Container maxWidth="lg" sx={{ height: "100%", textAlign: "center" }}>
@@ -57,7 +57,7 @@ export default function HomeSendMail() {
         </Typography>
         <Stack
           direction={isSmDown ? "column" : "row"}
-          spacing={5}
+          spacing={2}
           sx={{ height: isSmDown ? "95%" : "100%" }}
         >
           <Box
@@ -102,7 +102,7 @@ export default function HomeSendMail() {
               textAlign: "center",
               position: "relative",
               [theme.breakpoints.down("sm")]: {
-                height: "85%",
+                height: "75%",
               },
             }}
           >
