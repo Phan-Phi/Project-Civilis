@@ -7,8 +7,10 @@ export default function InputSendMail({ placeholder }) {
   const { isSmDown, isMdUp } = useMedia();
   const router = useRouter();
   const theme = useTheme();
+  console.log("first", router.pathname);
   return (
     <Input
+      className={router.pathname == "/du-hoc" ? "borderWhite" : "borderBlack"}
       fullWidth
       width="20%"
       placeholder={placeholder}

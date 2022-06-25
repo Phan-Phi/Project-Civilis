@@ -164,6 +164,6 @@ html {
   }
 }
 
-/* .MuiInputBase-root.MuiInput-root:hover:before {
-  border-bottom: 2px solid red;
-} */
+.MuiInputBase-root.MuiInput-root.borderWhite:hover:before {
+  border-bottom: 2px solid white;
+}

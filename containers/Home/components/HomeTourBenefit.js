@@ -121,12 +121,12 @@ export default function HomeTourBenefit() {
                     }}
                   >
                     <Typography
-                      variant={isSmDown ? "h4" : "body1"}
+                      variant={isSmDown ? "body1" : "body1"}
                       sx={{
                         color: theme.palette.common.white,
                         letterSpacing: 2,
                         [theme.breakpoints.down("md")]: {
-                          fontSize: "3rem",
+                          fontSize: "2rem",
                           marginBottom: "1rem",
                         },
                       }}

@@ -85,9 +85,9 @@ export default function FooterMobileTravel() {
                 <Content variant="caption1">56 Đào Duy Từ,Phường 9</Content>
                 <Content variant="caption1">Hotline: 028 888 888 88 </Content>
               </Box>
-              <Link href="/">
+              <Link href="/" sx={{ display: "block", marginBottom: "1rem" }}>
                 <Content
-                  variant="body2"
+                  variant="body3"
                   sx={{ borderBottom: "1px solid white" }}
                 >
                   ĐIỀU KHOẢN SỬ DỤNG
@@ -95,7 +95,7 @@ export default function FooterMobileTravel() {
               </Link>
               <Link href="/">
                 <Content
-                  variant="body2"
+                  variant="body3"
                   sx={{ borderBottom: "1px solid white" }}
                 >
                   CHÍNH SÁCH BẢO MẬT

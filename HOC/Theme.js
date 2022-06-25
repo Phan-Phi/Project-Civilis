@@ -105,6 +105,11 @@ const defaultTheme = createTheme({
       lineHeight: "32px",
       fontWeight: 600,
     },
+    body3: {
+      fontSize: "17px",
+      lineHeight: "24px",
+      fontWeight: 400,
+    },
 
     body2: {
       fontSize: "16px",
