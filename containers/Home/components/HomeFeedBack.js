@@ -29,7 +29,7 @@ export default function HomeFeedBack() {
           position: "absolute",
           top: "50%",
           right: "-5%",
-          transform: "translateY(-50%) ",
+          transform: "translateY(-50%) rotate(180deg)",
         }}
       >
         <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
@@ -46,7 +46,7 @@ export default function HomeFeedBack() {
           position: "absolute",
           top: "50%",
           left: "-5%",
-          transform: "translateY(-50%) rotate(180deg)",
+          transform: "translateY(-50%) ",
         }}
       >
         <ArrowSlick sx={{ fontSize: isSmDown ? "3rem" : "4rem" }} />
