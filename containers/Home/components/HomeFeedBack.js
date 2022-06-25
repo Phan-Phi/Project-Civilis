@@ -28,7 +28,7 @@ export default function HomeFeedBack() {
         sx={{
           position: "absolute",
           top: "50%",
-          left: "-5%",
+          right: "-5%",
           transform: "translateY(-50%) ",
         }}
       >
@@ -45,7 +45,7 @@ export default function HomeFeedBack() {
         sx={{
           position: "absolute",
           top: "50%",
-          right: "-5%",
+          left: "-5%",
           transform: "translateY(-50%) rotate(180deg)",
         }}
       >
