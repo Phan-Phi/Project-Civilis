@@ -8,6 +8,7 @@ import {
   Grid,
 } from "@mui/material";
 import { Container } from "@mui/system";
+import { useRouter } from "next/router";
 import React from "react";
 import ButtonGradient from "../../../components/Button/ButtonGradient";
 import InputSendMail from "../../../components/InputBackground/InputSendMail";
@@ -25,6 +26,7 @@ const arrayIconMXH = [
 export default function HomeSendMail() {
   const { isSmUp, isSmDown, isMdUp } = useMedia();
   const theme = useTheme();
+  const router = useRouter();
 
   return (
     <Box
@@ -128,6 +130,12 @@ export default function HomeSendMail() {
                   fontFamily: theme.fontName.aguda,
                   marginBottom: isSmDown ? "1rem" : "2rem",
                   textAlign: "left",
+                  [theme.breakpoints.down("sm")]: {
+                    color:
+                      router.pathname == "/du-hoc"
+                        ? theme.palette.common.white
+                        : theme.palette.common.white,
+                  },
                 }}
               >
                 HỘP THƯ CIVILIS

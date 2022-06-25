@@ -1,6 +1,6 @@
 import React from "react";
-import HomeStyduAbroad from "../../containers/Home/HomeStyduAbroad";
+import HomeStudyAbroad from "../../containers/Home/HomeStudyAbroad";
 
 export default function PageStudyAbroad() {
-  return <HomeStyduAbroad />;
+  return <HomeStudyAbroad />;
 }
