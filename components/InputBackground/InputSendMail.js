@@ -7,7 +7,6 @@ export default function InputSendMail({ placeholder }) {
   const { isSmDown, isMdUp } = useMedia();
   const router = useRouter();
   const theme = useTheme();
-  console.log("first", router.pathname);
   return (
     <Input
       className={router.pathname == "/du-hoc" ? "borderWhite" : "borderBlack"}
@@ -39,7 +38,7 @@ export default function InputSendMail({ placeholder }) {
             color:
               router.pathname == "/du-hoc"
                 ? theme.palette.common.white
-                : theme.palette.common.white,
+                : theme.palette.common.black,
           },
         },
       }}
