@@ -63,15 +63,14 @@ export default function HomeSendMail() {
           <Box
             sx={{
               width: isSmDown ? "100%" : "50%",
-              height: isSmDown ? "15%" : "100%",
+              // height: isSmDown ? "8vh" : "20vh",s
               padding: isSmDown ? 0 : "7rem",
+              [theme.breakpoints.down("sm")]: {
+                height: "10vh",
+              },
             }}
           >
-            <Grid
-              container
-              sx={{ height: "100%" }}
-              columnSpacing={isSmDown ? 4 : 5}
-            >
+            <Grid container sx={{ height: "100%" }} spacing={isSmDown ? 2 : 7}>
               {arrayIconMXH.map((item, index) => {
                 return (
                   <Grid
@@ -102,7 +101,7 @@ export default function HomeSendMail() {
               textAlign: "center",
               position: "relative",
               [theme.breakpoints.down("sm")]: {
-                height: "75%",
+                // height: "75%",
               },
             }}
           >
