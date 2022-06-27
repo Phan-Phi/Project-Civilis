@@ -18,10 +18,11 @@ export default function HomeTourBenefit() {
       <Title title="We have the best choice" />
 
       <Container maxWidth="lg">
-        <Grid
+        <Stack
+          direction={isSmDown ? "column" : "row"}
           className="plplplppp"
-          container
-          columnSpacing={isSmDown ? 0 : 6}
+          // container
+          spacing={isSmDown ? 0 : 6}
           sx={{
             width: "100%",
             margin: 0,
@@ -37,15 +38,17 @@ export default function HomeTourBenefit() {
         >
           {arrayCardTour.map((item, index) => {
             return (
-              <Grid
-                item
-                xs={12}
-                md={4}
+              <Box
+                // item
+                // xs={12}
+                // md={4}
                 key={index}
                 sx={{
+                  width: "33.3%",
                   // padding: "0 1rem",
                   "&:first-of-type": {
-                    padding: 0,
+                    // paddingLeft: "48px",
+                    // padding: "0",
                   },
                   [theme.breakpoints.down("sm")]: {
                     width: "100%",
@@ -170,10 +173,10 @@ export default function HomeTourBenefit() {
                     <ButtonGradient name="TOUR FULL" />
                   </Box>
                 </Box>
-              </Grid>
+              </Box>
             );
           })}
-        </Grid>
+        </Stack>
       </Container>
     </Box>
   );
