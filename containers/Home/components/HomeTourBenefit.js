@@ -22,7 +22,7 @@ export default function HomeTourBenefit() {
           direction={isSmDown ? "column" : "row"}
           className="plplplppp"
           // container
-          spacing={isSmDown ? 0 : 6}
+          spacing={isSmDown ? 0 : 7}
           sx={{
             width: "100%",
             margin: 0,
