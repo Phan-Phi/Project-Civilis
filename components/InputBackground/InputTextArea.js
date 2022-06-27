@@ -45,7 +45,7 @@ export default function InputTextArea({ placeholder }) {
               : theme.palette.common.black,
 
           fontFamily: theme.fontName.aguda,
-          opacity: 1,
+          opacity: "1 !important",
         },
       }}
     />

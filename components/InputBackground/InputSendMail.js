@@ -11,7 +11,7 @@ export default function InputSendMail({ placeholder }) {
     <Input
       className={router.pathname == "/du-hoc" ? "borderWhite" : "borderBlack"}
       fullWidth
-      width="20%"
+      // width="20%"
       placeholder={placeholder}
       sx={{
         marginBottom: isSmDown ? "0.8rem" : "1.2rem",
@@ -32,8 +32,7 @@ export default function InputSendMail({ placeholder }) {
             router.pathname == "/du-hoc"
               ? "white !important"
               : theme.palette.common.black,
-
-          opacity: 1,
+          opacity: "1 !important",
           [theme.breakpoints.down("sm")]: {
             color:
               router.pathname == "/du-hoc"

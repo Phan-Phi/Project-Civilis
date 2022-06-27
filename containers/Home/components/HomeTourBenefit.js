@@ -19,10 +19,13 @@ export default function HomeTourBenefit() {
 
       <Container maxWidth="lg">
         <Grid
+          className="plplplppp"
           container
-          columnSpacing={isSmDown ? 0 : 9}
+          columnSpacing={isSmDown ? 0 : 6}
           sx={{
             width: "100%",
+            margin: 0,
+
             [theme.breakpoints.down("sm")]: {
               width: "100%",
               margin: 0,
@@ -40,6 +43,10 @@ export default function HomeTourBenefit() {
                 md={4}
                 key={index}
                 sx={{
+                  // padding: "0 1rem",
+                  "&:first-of-type": {
+                    padding: 0,
+                  },
                   [theme.breakpoints.down("sm")]: {
                     width: "100%",
                     marginBottom: "80px",
